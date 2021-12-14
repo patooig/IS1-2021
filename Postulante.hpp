@@ -1,4 +1,5 @@
 #include <string>
+#include "PostulacionExclusiva.hpp"
 #include "NotificacionPostulante.hpp"
 
 class Postulante {

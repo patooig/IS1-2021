@@ -40,7 +40,7 @@ void ReportajeExclusivo::asignarProf(Profesional p){
     PostulacionExclusiva pe;
     for (int i = 0; i < postulaciones->size(); i++){
         pe = postulaciones->at(i);
-        if(pe.profesional.getNombre() = p.getNombre()){
+        if(pe.profesional == p){
             pe.asignarPostulante();
             break;
         }

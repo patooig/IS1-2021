@@ -1,6 +1,6 @@
 #include <vector>
 #include "Postulante.hpp"
-#include "PostulacionExclusiva.hpp"
+//#include "PostulacionExclusiva.hpp"
 
 using namespace std;
 

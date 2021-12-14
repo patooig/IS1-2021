@@ -1,6 +1,6 @@
 #include <time.h>
 #include <vector>
-//#include "Reportaje.hpp"
+#include "Reportaje.hpp"
 
 using namespace std;
 
