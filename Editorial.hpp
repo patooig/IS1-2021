@@ -34,7 +34,7 @@ Editorial::Editorial(string cod, string nom, string telef, string email, string 
 }
 
 void Editorial::obtenerFactura(){
-
+    
     suscripcion->obtenerFyS();
 
 }

@@ -44,6 +44,8 @@ void Suscripcion::obtenerFyS(){
     Factura * nuevaFactura = new Factura();
 
     facturas->push_back(nuevaFactura);
+
+    cout<<"Factura creada"<<endl;
 }
 
 vector<Reportaje> Suscripcion::comprar(){
