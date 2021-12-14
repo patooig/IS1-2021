@@ -9,11 +9,13 @@ class PostulacionExclusiva{
     private:
         time_t fechaPostulacion;
         string estado;
-        Profesional * profesional;
+        
 
     public: 
+        Profesional * profesional;
         PostulacionExclusiva( Profesional* p);
         void asignarPostulante();
+        Profesional * getProfesional();
         
 
         
@@ -25,4 +27,9 @@ PostulacionExclusiva::PostulacionExclusiva(Profesional *p){
 
 void PostulacionExclusiva::asignarPostulante(){
     profesional->asignarExclusiva();
+}
+
+Profesional* PostulacionExclusiva::getProfesional(){
+
+    return profesional;
 }

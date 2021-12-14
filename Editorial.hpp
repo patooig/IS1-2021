@@ -33,8 +33,10 @@ Editorial::Editorial(string cod, string nom, string telef, string email, string 
     suscripcion = sus;
 }
 
-void Editorial::obtenerFactura(){
+void Editorial::obtenerFactura(time_t fecha, int numero){
+    cout << "Editorial: " << nombre;
+    cout << "Direccion: " << direccion;
     
-    suscripcion->obtenerFyS();
+    suscripcion->obtenerFyS(fecha,numero);
 
 }

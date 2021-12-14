@@ -2,25 +2,27 @@
 #include "NotificacionPostulante.hpp"
 
 class Postulante {
-    private:
-    string nombre;
-    string telefono;
-    string mail;
-    string direccion;
-    string comuna;
-    string portafolio;
 
-    NotificacionPostulante * nP;
+    private:
+
+        string nombre;
+        string telefono;
+        string mail;
+        string direccion;
+        string comuna;
+        string portafolio;
+        NotificacionPostulante * nP;
 
     public : 
-    Postulante(string nombre, string telefono, string mail, string direccion, string comuna, string portafolio);
-    void notificar(string comentario);
-    string getNombre();
-    string getTelefono();
-    string getMail();
-    string getDireccion();
-    string getComuna();
-    string getPortafolio();
+
+        Postulante(string nombre, string telefono, string mail, string direccion, string comuna, string portafolio);
+        void notificar(string comentario);
+        string getNombre();
+        string getTelefono();
+        string getMail();
+        string getDireccion();
+        string getComuna();
+        string getPortafolio();
 
 };
 
@@ -40,6 +42,9 @@ void Postulante::notificar(string comentario){
     nP = new NotificacionPostulante(comentario);
         
 }
+
+
+//Métodos para la creacion del objeto Profesional
 
 string Postulante::getNombre(){
 

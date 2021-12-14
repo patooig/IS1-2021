@@ -6,6 +6,16 @@
 
 using namespace std;
 
+struct info{
+    time_t fecha;
+    string codigo;
+    int precio;
+    bool facturado;
+    vector<Reportaje> *reportajes;
+    vector<ReportajeExclusivo> *exclusivos;
+};
+
+
 class Venta{
 
     private:
@@ -18,8 +28,7 @@ class Venta{
 
     public:
         Venta();
-        void ventaRep(vector<Reportaje> *rep);
-        void ventaEx(vector<ReportajeExclusivo> *exc);
+
         void obtenerInformacion();
         
 };
@@ -28,19 +37,27 @@ Venta::Venta(){
     
 }
 
-void Venta::ventaRep(vector<Reportaje> *rep){
 
-    reportajes = rep;
+
+
+info Venta::obtenerInformacion(){
+
+    info i1; 
+    i1.fecha = this->fecha;
+    i1.codigo = this->codigo;
+    i1.precio = this->precio;
+    i1.facturado = this->facturado;
+    i1.reportajes = this->reportajes;
+    i1.exclusivos = this->exclusivos;
+
+    return i1;
 }
 
-void Venta::ventaEx(vector<ReportajeExclusivo> *exc){
-
-    exclusivos = exc;
-
+void Venta::cambiarEstado(){
+    facturado = true;
 }
 
-
-void Venta::obtenerInformacion(){
-
-
+bool Venta::getEstado(){
+    return facturado;
 }
+

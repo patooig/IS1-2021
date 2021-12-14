@@ -16,8 +16,20 @@ class Reportaje{
 
     public :
         Reportaje();
+        string getTitulo();
+        string getCodigo();
 };
 
 Reportaje::Reportaje(){
     
+}
+
+string Reportaje::getTitulo(){
+
+    return titulo;
+}
+
+string Reportaje::getCodigo(){
+    
+    return codigoReportaje;
 }

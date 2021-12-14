@@ -4,51 +4,60 @@
 #include "Catalogo.hpp"
 #include "Factura.hpp"
 
+struct info{
+    time_t fecha;
+    string codigo;
+    int precio;
+    bool facturado;
+    vector<Reportaje> *reportajes;
+    vector<ReportajeExclusivo> *exclusivos;
+};
+
 using namespace std;
 
 class Suscripcion{
 
     private:
-    time_t fechaSuscripcion;
-    string codigo;
-    int precioSuscripcion;
-    int ventaMes;
-    
-    vector<Venta*> *ventas;
-    vector<Venta*> *nuevasVentas;
-    vector<Factura*> *facturas;
-    Catalogo *catalogo;
+
+        time_t fechaSuscripcion;
+        string codigo;
+        int precioSuscripcion;
+        int ventaMes;
+        
+        vector<Venta*> *ventas;
+        vector<Factura*> *facturas;
+        vector<info> *infoVentas;
 
     public:
-    Suscripcion(time_t fechaSus, string cod, int precioSus, Catalogo *cat);
-    void obtenerFyS();
-    vector<Reportaje> comprar();
+
+        Suscripcion();
+        void obtenerFyS();
     
 };
 
-Suscripcion::Suscripcion(time_t fechaSus, string cod, int precioSus, Catalogo *cat){
-    fechaSuscripcion = fechaSus;
-    codigo = cod;
-    fechaSuscripcion = fechaSus;
-    precioSuscripcion = precioSus;
-    catalogo = cat;
-    
+Suscripcion::Suscripcion(){
+ 
     facturas = new vector<Factura*>;
     ventas = new vector<Venta*>;
 
 
 }
 
-void Suscripcion::obtenerFyS(){
-
-    Factura * nuevaFactura = new Factura();
-
+void Suscripcion::obtenerFyS(time_t fecha, int numero){
+    
+    infoVentas = new vector<info>;
+    for (int i = 0; i < ventas->size(); i++){
+        Venta *v;
+        v = ventas.at(i);
+        if(v->getEstado() == false){
+            infoVentas->push_back(v->obtenerInformacion());
+            v->cambiarEstado();
+        }
+    }
+    
+    Factura * nuevaFactura = new Factura(infoVentas,precioSuscripcion,fecha,numero);
     facturas->push_back(nuevaFactura);
-
     cout<<"Factura creada"<<endl;
-}
+    delete infoVentas;
 
-vector<Reportaje> Suscripcion::comprar(){
-
-        return catalogo->verCatalogo();
 }

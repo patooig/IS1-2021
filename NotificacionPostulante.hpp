@@ -10,10 +10,13 @@ class NotificacionPostulante{
         string comentario;
 
     public:
-    NotificacionPostulante(string comentario);
+    
+        NotificacionPostulante(string comentario);
 
 };
 
 NotificacionPostulante::NotificacionPostulante(string comentario){
-    this->comentario = comentario;   
+    
+    this->comentario = comentario; 
+
 }
